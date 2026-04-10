@@ -1,4 +1,3 @@
-// 1. Data m3a l-paths dyal images/
 const movies = [
     { id: 1,
      title: "Inception",
