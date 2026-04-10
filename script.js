@@ -1,17 +1,77 @@
 // 1. Data m3a l-paths dyal images/
 const movies = [
-    { id: 1, title: "Inception", genre: "Action", image: "images/image1.webp", description: "Un voleur qui subtilise des secrets d'entreprise à travers l'utilisation de la technologie de partage de rêves." },
-    { id: 2, title: "Home Alone", genre: "Comedy", image: "images/image2.webp", description: "Un enfant de huit ans doit protéger sa maison contre des cambrioleurs après avoir été laissé seul par sa famille." },
-    { id: 3, title: "The Pursuit of Happyness", genre: "Drama", image: "images/image3.jpg", description: "Un vendeur en difficulté prend la garde de son fils alors qu'il est sur le point de commencer une carrière professionnelle changeante." },
-    { id: 4, title: "Ready Player One", genre: "Science-fiction", image: "images/image4.webp", description: "Dans un futur proche, les gens passent leur temps dans un univers de réalité virtuelle appelé l'OASIS." },
-    { id: 5, title: "Mr. Bean Holiday", genre: "Comedy", image: "images/image5.jpg", description: "Mr. Bean gagne un voyage en France et se retrouve au milieu d'une aventure imprévue vers Cannes." },
-    { id: 6, title: "Gladiator", genre: "Action", image: "images/image6.jpg", description: "Un ancien général romain cherche à se venger de l'empereur corrompu qui a tué sa famille." },
-    { id: 7, title: "Yes Man", genre: "Comedy", image: "images/image7.webp", description: "Un homme décide de dire 'oui' à absolument tout ce qu'on lui propose pendant une année entière." },
-    { id: 8, title: "Titanic", genre: "Drama", image: "images/image8.jpg", description: "L'histoire d'amour tragique entre deux passagers de classes sociales différentes à bord du Titanic." },
-    { id: 9, title: "Ant-Man", genre: "Science-fiction", image: "images/image9.jpg", description: "Un cambrioleur acquiert la capacité de réduire sa taille tout en augmentant sa force." },
-    { id: 10, title: "Love and Monsters", genre: "Science-fiction", image: "images/image10.webp", description: "Sept ans après l'apocalypse des monstres, un jeune homme quitte son bunker pour retrouver son ex." },
-    { id: 11, title: "Fight Club", genre: "Drama", image: "images/image11.webp", description: "Un employé de bureau insomniaque et un fabricant de savon créent un club de combat clandestin." },
-    { id: 12, title: "John Wick", genre: "Action", image: "images/image12.webp", description: "Un ancien tueur à gages sort de sa retraite pour traquer les gangsters qui ont tout pris." }
+    { id: 1,
+     title: "Inception",
+    genre: "Action",
+    image: "images/image1.webp",
+     description: "Un voleur qui subtilise des secrets d'entreprise à travers l'utilisation de la technologie de partage de rêves." 
+    },
+    { id: 2,
+         title: "Home Alone", 
+         genre: "Comedy", 
+         image: "images/image2.webp", 
+         description: "Un enfant de huit ans doit protéger sa maison contre des cambrioleurs après avoir été laissé seul par sa famille." 
+        },
+    { id: 3, 
+        title: "The Pursuit of Happyness", 
+        genre: "Drama", 
+        image: "images/image3.jpg", 
+        description: "Un vendeur en difficulté prend la garde de son fils alors qu'il est sur le point de commencer une carrière professionnelle changeante." 
+    },
+    { id: 4, 
+        title: "Ready Player One", 
+        genre: "Science-fiction", 
+        image: "images/image4.webp", 
+        description: "Dans un futur proche, les gens passent leur temps dans un univers de réalité virtuelle appelé l'OASIS." 
+    },
+    { id: 5, 
+        title: "Mr. Bean Holiday", 
+        genre: "Comedy", 
+        image: "images/image5.jpg", 
+        description: "Mr. Bean gagne un voyage en France et se retrouve au milieu d'une aventure imprévue vers Cannes." 
+    },
+    { id: 6, 
+        title: "Gladiator", 
+        genre: "Action", 
+        image: "images/image6.jpg", 
+        description: "Un ancien général romain cherche à se venger de l'empereur corrompu qui a tué sa famille." 
+    },
+    { id: 7, 
+        title: "Yes Man", 
+        genre: "Comedy", 
+        image: "images/image7.webp", 
+        description: "Un homme décide de dire 'oui' à absolument tout ce qu'on lui propose pendant une année entière." 
+    },
+    { id: 8, 
+        title: "Titanic", 
+        genre: "Drama", 
+        image: "images/image8.jpg", 
+        description: "L'histoire d'amour tragique entre deux passagers de classes sociales différentes à bord du Titanic." 
+    },
+    { id: 9, 
+        title: "Ant-Man", 
+        genre: "Science-fiction", 
+        image: "images/image9.jpg", 
+        description: "Un cambrioleur acquiert la capacité de réduire sa taille tout en augmentant sa force." 
+    },
+    { id: 10, 
+        title: "Love and Monsters", 
+        genre: "Science-fiction", 
+        image: "images/image10.webp", 
+        description: "Sept ans après l'apocalypse des monstres, un jeune homme quitte son bunker pour retrouver son ex." 
+    },
+    { id: 11, 
+        title: "Fight Club", 
+        genre: "Drama", 
+        image: "images/image11.webp", 
+        description: "Un employé de bureau insomniaque et un fabricant de savon créent un club de combat clandestin." 
+    },
+    { id: 12, 
+        title: "John Wick", 
+        genre: "Action", 
+        image: "images/image12.webp", 
+        description: "Un ancien tueur à gages sort de sa retraite pour traquer les gangsters qui ont tout pris." 
+    }
 ];
 
 const cardsContainer = document.querySelector('.cards');
