@@ -100,10 +100,12 @@ function displayMovies(moviesList) {
 }
 
 // Logic dyal l-Modal
-window.showDetails = function(id) {
+ function showDetails(id) {
     const movie = movies.find(m => m.id === id);
+    console.log(movie)
     if (movie) {
         document.getElementById('modalImg').src = movie.image;
+        console.log(document.getElementById('modalImg').src)
         document.getElementById('modalTitle').innerText = movie.title;
         document.getElementById('modalGenre').innerText = movie.genre;
         document.getElementById('modalDesc').innerText = movie.description;
