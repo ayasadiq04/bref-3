@@ -36,6 +36,9 @@ html, body{
   justify-content: space-between;
   padding: 1rem 5%;
   background: rgba(10,14,26,0.95);
+  position: sticky; /* Bach tb9a l-navbar dima lfo9 */
+  top: 0;
+  z-index: 1000;
 }
 
 .logo{
@@ -48,7 +51,7 @@ html, body{
 .logo img{
   width: 40px;
   height: 40px;
-  object-fit: cover;
+  object-fit: contain; /* Hna hsen mn cover bach logo mayit9te3ch */
   display: block;
   margin-right: 8px;
 }
@@ -67,7 +70,7 @@ html, body{
   transition: color .2s;
 }
 
-.nav-links a:hover{ color: var(--text-light); }
+.nav-links a:hover, .nav-links a.active{ color: var(--text-light); }
 
 /* Search */
 .search-bar input{
@@ -76,12 +79,13 @@ html, body{
   padding: 8px 15px;
   border-radius: 20px;
   color: var(--text-light);
+  outline: none;
 }
 
 /* HERO */
 .hero{
   min-height: 50vh;
-  background: url('interstellar-movie-wallpaper-preview.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('interstellar-movie-wallpaper-preview.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,19 +93,15 @@ html, body{
 }
 
 .hero-overlay{
-  background: rgba(0,0,0,0.6);
   width: 100%;
-  height: 100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  line-height: 10;
+  text-align: center;
+  /* Hayedna line-height: 10 hit katfere9 l-hdra bzaf */
 }
 
 .hero h1{
   font-size: 2.2rem;
   color: #f1c40f;
-  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 /* Filters */
@@ -120,18 +120,19 @@ html, body{
   padding: 8px 18px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background .2s, color .2s;
+  transition: all .2s;
 }
 
 .filter-btn:hover, .filter-btn.active{
-  background: var(--muted-2);
+  background: var(--primary-pink);
   color: var(--text-light);
+  border-color: var(--primary-pink);
 }
 
 /* CARDS GRID */
 .cards{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 25px;
   margin-bottom: 50px;
 }
@@ -145,30 +146,25 @@ html, body{
   border: 1px solid rgba(255,255,255,0.04);
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .card:hover{
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-  border-color: rgba(233,30,99,0.18);
+  border-color: var(--primary-pink);
 }
 
 .card img{
   width: 100%;
-  height: 250px;
-  max-height: 40vh;
+  height: 280px; /* Tbit l-height bach l-cards ijiw 9ed 9ed */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
-  display:block;
 }
 
 .card h3{
   font-size: 0.95rem;
   margin-bottom: 6px;
-  color: var(--text-light);
-  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -180,126 +176,88 @@ html, body{
   margin-bottom: 12px;
 }
 
-/* description inside card */
-.movie-desc{
-  font-size: 0.8rem;
-  color: #d7d7d7;
-  margin-bottom: 12px;
-  width: 100%;
-  text-align: left;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Button unified */
+/* Buttons */
 .btn-details{
   background: var(--primary-pink);
-  color: var(--text-light);
+  color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 10px;
   border-radius: 6px;
-  font-size: 0.85rem;
   cursor: pointer;
-  width: 100%;
-  transition: background .2s, transform .12s;
+  margin-top: auto; /* Kaykhalli l-bouton dima lte7t */
 }
 
-.btn-details:hover{
-  background: #c2185b;
-  transform: translateY(-2px);
-}
-
-/* Favorites grid (use grid like cards) */
-#favoritesGrid{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
-}
-/* Style Modal */
+/* MODAL Style */
 .modal {
-    display: none; 
-    position: fixed;
-    z-index: 9999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* background mdelm */
-    backdrop-filter: blur(5px); /* t-flouti l-khlef */
+  display: none; 
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
 }
 
 .modal-content {
-    background-color: #161b2b;
-    margin: 5% auto;
-    padding: 30px;
-    width: 90%;
-    max-width: 850px;
-    border-radius: 15px;
-    position: relative;
-    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
-    animation: fadeIn 0.3s ease-in-out;
+  background-color: var(--card-bg);
+  margin: 5% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 15px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .close-btn {
-    position: absolute;
-    right: 25px; top: 15px;
-    font-size: 35px;
-    color: #e91e63;
-    cursor: pointer;
+  position: absolute;
+  right: 20px; top: 10px;
+  font-size: 30px;
+  color: var(--primary-pink);
+  cursor: pointer;
 }
 
 .modal-body {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
 }
 
 .modal-img img {
-    width: 280px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  width: 250px;
+  border-radius: 10px;
 }
 
-.modal-info h2 { font-size: 2rem; color: #e91e63; margin-bottom: 10px; }
-.modal-genre { color: #ffeb3b; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
-.modal-desc { line-height: 1.8; color: #d7d7d7; font-size: 1.05rem; margin-bottom: 30px; }
+.modal-info h2 { color: var(--primary-pink); margin-bottom: 10px; }
+.modal-genre { color: #f1c40f; font-weight: bold; margin-bottom: 15px; }
+.modal-desc { font-size: 0.95rem; color: #ddd; margin-bottom: 20px; }
 
 .modal-fav-btn {
-    background: #e91e63;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: 0.3s;
+  background: var(--primary-pink);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
 }
-
-.modal-fav-btn:hover { background: #c2185b; transform: scale(1.05); }
-
-
 
 /* Footer */
 footer{
   text-align: center;
-  padding: 18px 0;
+  padding: 2rem 0;
   border-top: 1px solid var(--muted-bg);
   color: var(--text-gray);
-  font-size: 0.85rem;
 }
 
-/* Responsive tweaks */
-@media (max-width:640px){
-  .hero h1{ font-size: 1.6rem; }
-  .card img{ height: 200px; }
-  .nav-links{ display:none; }
-    .modal-body { flex-direction: column; align-items: center; text-align: center; }
-    .modal-img img { width: 200px; }
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-body { flex-direction: column; align-items: center; text-align: center; }
+  .modal-img img { width: 180px; }
+  .nav-links { display: none; }
 }

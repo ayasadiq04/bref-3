@@ -124,28 +124,33 @@
          </div>
      
     </main>
-       <div class="movie-grid" id="favoritesGrid">
-            <h2 class="fav-title">Mes Favoris ❤️</h2>
-        </div>
-        <div id="movieModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div class="modal-body">
-            <div class="modal-img">
-                <img id="modalImg" src="" alt="movie poster">
+       <section id="favoritesGrid" class="movie-grid">
+        <h2 class="fav-title">Mes Favoris ❤️</h2>
+        <div class="cards" id="favCards">
             </div>
-            <div class="modal-info">
-                <h2 id="modalTitle"></h2>
-                <p id="modalGenre" class="modal-genre"></p>
-                <p id="modalDesc" class="modal-desc"></p>
-                <button id="modalFavBtn" class="modal-fav-btn">❤️ Ajouter aux favoris</button>
+    </section>
+
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img id="modalImg" src="" alt="movie poster">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalGenre" class="modal-genre"></p>
+                    <p id="modalDesc" class="modal-desc"></p>
+                    <button id="modalFavBtn" class="modal-fav-btn">❤️ Ajouter aux favoris</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
     <footer>
-        <p class="copyright"> &copy; 2026 Cinevia - Tous droits reserves</p>
+        <p class="copyright">&copy; 2026 Cinevia - Tous droits réservés</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

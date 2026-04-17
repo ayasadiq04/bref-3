@@ -93,7 +93,6 @@ function displayMovies(moviesList) {
             <p>${movie.genre}</p>
             <div class="card-btns">
                 <button class="btn-details" onclick="showDetails(${movie.id})">Voir Details</button>
-                <button class="btn-fav" onclick="addToFav(${movie.id})">❤️</button>
             </div>
         `;
         cardsContainer.appendChild(card);
